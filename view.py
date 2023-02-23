@@ -1,19 +1,21 @@
 import datetime
 
-import model
-
 
 def start_selection():
     print("\n" + "=" * 30)
     print('выберите пункт меню')
-    command = int(input(''' 1 - создать заметку, 
-                        2 - поиск заметки по ID,
-                        3 - фильтровать по дате,
-                        4 - редактировать заметку по ID,
-                        5 - удалить заметку по ID,
-                        6 - показать все заметки '''))
+    print('1 - создать заметку;')
+    print('2 - поиск заметки по ID;')
+    print('3 - фильтровать по дате;')
+    print('4 - редактировать заметку по ID;')
+    print('5 - удалить заметку по ID;')
+    print('6 - показать все заметки.')
+    print('7 - выход.')
+    command = int(input(": "))
     if 0 < command < 7:
         return command
+    elif command == 7:
+        return False
     else:
         print('ошибка ввода')
 
@@ -21,10 +23,12 @@ def start_selection():
 def confirm():
     print("успешно выполнено ")
 
+
 def create_note():
-    note = {'title': input('введите заголовок: '),
-            'data': input('введите данные: '),
-            'date': datetime.datetime}
+    title = input('введите заголовок: ')
+    data = input('введите данные: ')
+    date = datetime.date
+    note = {'title': title, 'data': data, 'date': date}
     return note
 
 

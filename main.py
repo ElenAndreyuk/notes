@@ -10,7 +10,7 @@
 # При чтении списка заметок реализовать фильтрацию по дате
 
 
-import controller as controller
+import controller
 
 global path
 path = 'notes.csv'
