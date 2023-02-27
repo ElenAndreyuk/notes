@@ -1,6 +1,3 @@
-import csv
-from pathlib import Path
-
 
 def write_csv(notes):
     path = 'notes.csv'
