@@ -30,24 +30,18 @@ def create_note():
     title = input('введите заголовок: ')
     data = input('введите данные: ')
     date = str(datetime.now().strftime("%d.%m.%Y %H:%M:%S"))
-    # note = {'title': title, 'data': data, 'date': date}
-    note = {title: 'title', data: 'data', date: 'date'}
+    note = {'title' : title, 'data': data, 'date': date}
     return note
 
 
-# def print_note(note):
-#     try:
-#         print('+++++++++++')
-#         print(note.get['title'])
-#         print(note.get['ID'])
-#         print(note.get['data'])
-#         print(note.get['date'])
-#     except:
-#         print('error')
-
-
 def print_note(note):
-    print(note.values())
+    print(note)
+    print(note['ID'])
+    print(note['title'].center(20))
+    print(note['data'])
+    print(note['date'])
+    print('-------------------')
+
 
 def get_id():
     id = int(input('введите ID: '))
@@ -58,16 +52,9 @@ def get_date():
     date = input('Введите дату в формате dd.mm.yyyy: ')
     return date
 
-# def show_all(x):
-#     x = [i.rstrip() for i in x]
-#     for i in x:
-#         if (x.index(i) + 1) % 4 == 0:
-#             print(i, )
-#         else:
-#             print(i, end=' ')
-#
-#
 
+def not_find():
+    print('не нашлось')
 #
 #
 # def search_surname(b):

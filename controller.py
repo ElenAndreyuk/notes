@@ -8,7 +8,7 @@ def button_click():
         notes = model.extract_csv()
         if command == 1:
             note = view.create_note()
-            # note.update(['ID', str(len(notes) + 1)])
+            # note.py.update(['ID', str(len(notes) + 1)])
             if len(notes) > 0:
                 id = len(notes) + 1
             else:
