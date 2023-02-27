@@ -8,7 +8,7 @@ def write_csv(notes):
         # with open(path, 'a') as data:
         for note in notes:
             csv_file.write(note['title'] + ';' + note['data'] + ';' + note['date'])
-            # csv_file.write('\n')
+            csv_file.write('\n')
     csv_file.close()
 
 
@@ -24,33 +24,29 @@ def extract_csv():
             note = {'title': line[0], 'data': line[1], 'date': line[2], 'ID': id}
             notes.append(note)
     except:
-        print('заметок нет')
+        print()
     data.close()
     return notes
 
 
 def search_for_id(id, notes):
     for note in notes:
-        if id == str(note['ID']):
+        if id == note['ID']:
             return note
     return
 
 
 def delete_for_id(id, notes):
     for note in notes:
-        if id == str(note['ID']):
-            notes.pop(note)
+        if id == note['ID']:
+            notes.remove(note)
     return notes
 
 
-def sort_for_date(start_date, stop_date, notes):
+def sort_for_date(date, notes):
+    result = []
     for note in notes:
-        result = []
-        date = note['date']
-        if start_date <= date <= stop_date:
+        date_note = str(note['date'])
+        if str(date) == date_note[0: 10]:
             result.append(note)
     return result
-
-    # def save(self, notepad):
-    #     data = pd.DataFrame([note.py.__dict__ for note.py in notepad])
-    #     data.to_csv(self.file_name, index=False)

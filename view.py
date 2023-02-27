@@ -4,15 +4,14 @@ import emoji
 
 def start_selection():
     print("\n" + "=" * 30)
-    print(emoji.emojize('Python is :thumbs_up:'))
     print('выберите пункт меню')
-    print('1 - создать заметку;')
-    print('2 - поиск заметки по ID;')
-    print('3 - фильтровать по дате;')
-    print('4 - редактировать заметку по ID;')
-    print('5 - удалить заметку по ID;')
-    print('6 - показать все заметки.')
-    print('7 - выход.')
+    print('1 - создать заметку ' + emoji.emojize(':pen:') + ';')
+    print('2 - поиск заметки по ID ' + emoji.emojize(':magic_wand:') + ';')
+    print('3 - фильтровать по дате ' + emoji.emojize(':calendar:') + ';')
+    print('4 - редактировать заметку по ID ' + emoji.emojize(':reverse_button:') + ';')
+    print('5 - удалить заметку по ID ' + emoji.emojize(':toilet:') + ';')
+    print('6 - показать все заметки ' + emoji.emojize(':notebook:') + ';')
+    print('7 - выход ' + emoji.emojize(':hand_with_fingers_splayed:') + '.')
     command = int(input(": "))
     if 0 < command < 7:
         return command
@@ -23,7 +22,7 @@ def start_selection():
 
 
 def confirm():
-    print("успешно выполнено ")
+    print(emoji.emojize(':OK_hand:'))
 
 
 def create_note():
@@ -35,7 +34,6 @@ def create_note():
 
 
 def print_note(note):
-    print(note)
     print(note['ID'])
     print(note['title'].center(20))
     print(note['data'])
@@ -55,26 +53,3 @@ def get_date():
 
 def not_find():
     print('не нашлось')
-#
-#
-# def search_surname(b):
-#     y = input('введите фамилию: ')
-#     for i in range(0, len(b), 4):
-#         if y in b[i]:
-#             print(b[i], b[i + 1], b[i + 2], b[i + 3])
-#             break
-#     else:
-#         print('не найдено')
-#
-#
-# def search_number(d):
-#     list_cont = d
-#     z = input('введите номер телефона: ')
-#     for i in range(len(list_cont)):
-#         if z in list_cont[i]:
-#             print(list_cont[i], list_cont[i - 1], list_cont[i - 2], list_cont[i + 1])
-#             break
-#     else:
-#         print('не найдено')
-#
-#
